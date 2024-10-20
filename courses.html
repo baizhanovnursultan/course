@@ -3,29 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Фитнес Курс</title>
+    <title>Курсы</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f5f5f5;
             padding: 20px;
         }
-        .course-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .course {
+        .content {
+            max-width: 400px; /* Устанавливаем ширину для адаптивности */
+            margin: 0 auto;
             background-color: white;
             padding: 20px;
-            margin: 15px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 500px;
+        }
+        h2 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        .course {
             position: relative;
+            margin-bottom: 20px; /* Отступ между уроками */
         }
         .video-container {
             position: relative;
+            width: 100%; /* Устанавливаем ширину для видео */
+            border-radius: 8px;
+            overflow: hidden; /* Скрываем переполнение */
+        }
+        video {
+            width: 100%; /* Адаптируем ширину видео */
+            border-radius: 8px;
         }
         .video-overlay {
             position: absolute;
@@ -36,118 +45,99 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: rgba(0, 0, 0, 0.5);
             color: white;
-            font-size: 20px;
-            z-index: 1;
+            background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+            font-weight: bold;
+            z-index: 1; /* Перекрытие видео */
         }
-        video {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            z-index: 0;
-        }
-        .course-description {
-            margin-top: 10px;
-        }
-        h2 {
-            text-align: center;
+        p {
+            font-size: 14px; /* Уменьшаем размер текста */
+            color: #333;
         }
         footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    background-color: #f5f5f5;
-    padding: 10px;
-    font-size: 12px;
-    color: #888;
-}
+            margin-top: 20px;
+            font-size: 12px;
+            color: #888;
+            text-align: center;
+        }
+        .cta-button {
+            display: block;
+            width: 80%; /* Уменьшаем ширину кнопки */
+            padding: 8px; /* Уменьшаем высоту кнопки */
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px; /* Уменьшаем размер шрифта */
+            margin-left: auto; /* Центрируем кнопку */
+            margin-right: auto; /* Центрируем кнопку */
+        }
     </style>
 </head>
 <body>
 
-<h2>Видео-урок</h2>
-
-<div class="course-container">
+<div class="content">
+    <h2>Курсы по фитнесу</h2>
+    
     <div class="course">
+        <h3>Урок 1: Кардио</h3>
         <div class="video-container">
             <div class="video-overlay">Тут видео-урок вашего курса</div>
             <video controls>
-                <source src="video1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
+                <source src="lesson1.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
             </video>
         </div>
-        <div class="course-description">
-            <h3>День 1: Кардио</h3>
-            <p>Задача: Разогреть тело и активировать сердечно-сосудистую систему.</p>
-        </div>
-    </div>
-    <div class="course">
-        <div class="video-container">
-            <div class="video-overlay">Тут видео-урок вашего курса</div>
-            <video controls>
-                <source src="video2.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <div class="course-description">
-            <h3>День 2: Силовая тренировка</h3>
-            <p>Задача: Развивать мышечную силу и улучшить общее состояние мышц.</p>
-        </div>
+        <p>В этом уроке вы узнаете основы кардио-тренировок и как их правильно выполнять.</p>
     </div>
 
     <div class="course">
+        <h3>Урок 2: Силовые тренировки</h3>
         <div class="video-container">
             <div class="video-overlay">Тут видео-урок вашего курса</div>
             <video controls>
-                <source src="video3.mp4" type="video/mp4">
-                Your browser does not support the video tag.
+                <source src="lesson2.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
             </video>
         </div>
-        <div class="course-description">
-            <h3>День 3: Растяжка и подвижность</h3>
-            <p>Задача: Улучшить гибкость и расслабить мышцы после двух активных дней.</p>
-        </div>
+        <p>На этом уроке мы разберем основные упражнения для силовых тренировок.</p>
     </div>
 
     <div class="course">
+        <h3>Урок 3: Гибкость и растяжка</h3>
         <div class="video-container">
             <div class="video-overlay">Тут видео-урок вашего курса</div>
             <video controls>
-                <source src="video4.mp4" type="video/mp4">
-                Your browser does not support the video tag.
+                <source src="lesson3.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
             </video>
         </div>
-        <div class="course-description">
-            <h3>День 4: Комбинированная тренировка</h3>
-            <p>Задача: Соединить кардио и силовую нагрузку для комплексного эффекта.</p>
+        <p>Изучите техники растяжки, которые помогут улучшить гибкость.</p>
+    </div>
+
+    <div class="course">
+        <h3>Урок 4: Восстановление и отдых</h3>
+        <div class="video-container">
+            <div class="video-overlay">Тут видео-урок вашего курса</div>
+            <video controls>
+                <source src="lesson4.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
         </div>
+        <p>Узнайте, как правильно восстанавливать силы после тренировки.</p>
+    </div>
+
+    <div class="user-info">
+        <a href="business.html" class="cta-button">Возможности для инфобизнеса</a>
     </div>
 </div>
 
 <footer>
-    Telegram: @nbaizhanov23
+    Telegram: @qqqnurs
 </footer>
-
-<script>
-    const videos = document.querySelectorAll('video');
-    const overlays = document.querySelectorAll('.video-overlay');
-
-    videos.forEach((video, index) => {
-        video.addEventListener('play', () => {
-            overlays[index].style.display = 'none';
-        });
-
-        video.addEventListener('pause', () => {
-            overlays[index].style.display = 'flex';
-        });
-
-        video.addEventListener('ended', () => {
-            overlays[index].style.display = 'flex';
-        });
-    });
-</script>
 
 </body>
 </html>
