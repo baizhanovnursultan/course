@@ -3,21 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Логин</title>
+    <title>Авторизация</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f5f5f5;
             padding: 20px;
-            display: flex;
-            justify-content: center; /* Центрирование по горизонтали */
-            align-items: center; /* Центрирование по вертикали */
-            height: 100vh; /* Высота экрана */
-            margin: 0;
         }
-        .login-container {
-            max-width: 400px; /* Ограничиваем ширину */
-            width: 100%; /* Занимаем всю доступную ширину */
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
             background-color: white;
             padding: 20px;
             border-radius: 8px;
@@ -29,25 +24,25 @@
         }
         input[type="text"],
         input[type="password"] {
-            width: 100%; /* Полная ширина */
+            width: 80%; /* Установим ширину полей на 80% */
             padding: 10px;
-            margin: 10px 0;
+            margin: 10px auto; /* Установим автоматические отступы по горизонтали */
             border: 1px solid #ccc;
             border-radius: 4px;
-            box-sizing: border-box; /* Включаем отступы и границы в ширину */
+            font-size: 14px;
+            display: block; /* Изменяем на блочный элемент для центрирования */
         }
         .login-button {
-            width: 100%; /* Полная ширина */
+            width: 56%; /* Уменьшаем ширину кнопки на 30% */
             padding: 10px;
-            background-color: #4CAF50; /* Цвет кнопки */
+            background-color: #4CAF50;
             color: white;
             border: none;
             border-radius: 4px;
-            cursor: pointer;
             font-size: 16px;
-        }
-        .login-button:hover {
-            background-color: #45a049; /* Изменение цвета при наведении */
+            cursor: pointer;
+            display: block; /* Изменяем на блочный элемент для центрирования */
+            margin: 10px auto; /* Устанавливаем автоматические отступы по горизонтали */
         }
         footer {
             margin-top: 20px;
@@ -56,34 +51,19 @@
             text-align: center;
         }
     </style>
+    <script>
+        function login(event) {
+            event.preventDefault(); // Предотвращаем отправку формы
+            const username = document.getElementById("username").value.toLowerCase();
+            const password = document.getElementById("password").value.toLowerCase();
+
+            // Проверка логина и пароля
+            if (username === "admin" && password === "admin") {
+                window.location.href = "courses.html"; // Переход на страницу курсов
+            } else {
+                alert("Неверный логин или пароль!");
+            }
+        }
+    </script>
 </head>
 <body>
-
-<div class="login-container">
-    <h2>Авторизация</h2>
-    <form action="courses.html" method="post" onsubmit="return validateLogin();">
-        <input type="text" id="username" placeholder="Логин" required>
-        <input type="password" id="password" placeholder="Пароль" required>
-        <button type="submit" class="login-button">Войти</button>
-    </form>
-    <footer>
-        Telegram: @nbaizhanov23
-    </footer>
-</div>
-
-<script>
-    function validateLogin() {
-        const username = document.getElementById('username').value.toLowerCase();
-        const password = document.getElementById('password').value;
-
-        if (username === 'admin' && password === 'admin') {
-            return true; // Разрешаем переход
-        } else {
-            alert('Неверный логин или пароль.');
-            return false; // Запрещаем переход
-        }
-    }
-</script>
-
-</body>
-</html>
